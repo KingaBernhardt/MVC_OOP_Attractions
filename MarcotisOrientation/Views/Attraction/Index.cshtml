@@ -1,0 +1,60 @@
+﻿@model List<Attractions>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Price</th>
+                <th scope="col">Longitude</th>
+                <th scope="col">Lattitude</th>
+                <th scope="col">Category</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Recommended Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var attraction in Model)
+            {
+            <tr class="table-active">
+                <td>@attraction.AttrName</td>
+                <td>@attraction.City</td>
+                <td>@attraction.Price</td>
+                <td>@attraction.Longitude</td>
+                <td>@attraction.Lattitude</td>
+                <td>@attraction.Category</td>
+                <td>@attraction.Duration</td>
+                <td>@attraction.RecommendedAge</td>
+            </tr>
+            }
+            </tbody>
+    </table>
+    <form action="/Add" method="post">
+        <label>Name:</label>
+        <input type="text" name="AttrName" value="" required /><br />
+        <label>City:</label>
+        <input type="text" name="City" value="" required /><br />
+        <label>Price:</label>
+        <input type="number" name="Price" value="" required /><br />
+        <label>Longitude:</label>
+        <input type="number" name="Longitude" value="" required /><br />
+        <label>Lattitude:</label>
+        <input type="number" name="Lattitude" value="" required /><br />
+        <label>Category:</label>
+        <input type="text" name="Category" value="" required /><br />
+        <label>Duration:</label>
+        <input type="number" name="Duration" value="" required /><br />
+        <label>Recommended age:</label>
+        <input type="number" name="RecommendedAge" value="" required /><br />
+        <input type="number" name="Id" value="" hidden/>
+        <button type="submit">Elkuldes</button>
+    </form>
+</body>
+</html>
+
+
